@@ -1,0 +1,89 @@
+/* FONT */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap');
+
+/* VARIABLES */
+:root {
+  --primary: rgb(68, 68, 68);;
+  --secondary: #ebebeb;
+  --warning: #da0f41;
+}
+
+/* BASIC STYLES  */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito', sans-serif;
+  color: var(--primary);
+  box-sizing: border-box;
+}
+body {
+	position: relative;
+}
+body::after {
+	content: "";
+	background-image: url(../assets/moviez-cover.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	opacity: 0.6;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: fixed;
+	z-index: -1;
+}
+a {
+  text-decoration: none;
+}
+
+/* BUTTONS */
+button, .btn {
+  background: var(--secondary);
+  border-radius: 8px;
+  border: 0;
+  padding: 8px 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-block;
+  transition: 0.3s ease;
+}
+button:hover, .btn:hover {
+  background: var(--primary);
+  color: white;
+}
+button:disabled {
+  opacity: 0.5;
+  color: var(--primary);
+  background: var(--secondary);
+  cursor: not-allowed;
+}
+
+/* FORMS */
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 1px 2px 3px rgba(50,50,50,0.05);
+  border: 1px solid  var(--secondary);
+  background: white;
+  opacity: 0.7;
+}
+input, textarea {
+  border: 0;
+  border-bottom: 1px solid var(--secondary);
+  padding: 10px;
+  outline: none;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 20px auto;
+}
+
+/* ERROR MSG */
+.error {
+  color: var(--warning);
+  font-size: 14px;
+  margin: 16px 0;
+}
