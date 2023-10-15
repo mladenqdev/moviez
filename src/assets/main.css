@@ -79,6 +79,7 @@ input, textarea {
   width: 100%;
   box-sizing: border-box;
   margin: 20px auto;
+  max-width: 100%;
 }
 
 /* ERROR MSG */

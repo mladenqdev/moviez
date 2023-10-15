@@ -4,7 +4,7 @@
 	  <input type="text" required placeholder="List title" v-model="title">
 	  <textarea required placeholder="List description..." v-model="description"></textarea>
 	  <!-- upload list image -->
-	  <label>Upload list cover image</label>
+	  <label>Upload list cover image (cannot be changed)</label>
 	  <input type="file" @change="handleChange" required>
 	  <div class="error">{{ fileError }}</div>
 
@@ -61,7 +61,6 @@ export default {
 
 		const handleChange = (e) => {
 			const selected = e.target.files[0]
-			console.log(selected)
 
 			if (selected && types.includes(selected.type)) {
 				file.value = selected

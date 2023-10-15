@@ -177,8 +177,7 @@ export default {
     	transform: translateX(-50%);
 		min-width: 100%;
 		min-height: 100%;
-		max-width: 200%;
-		max-height: 200%;
+		max-width: 100%;
 		opacity: 0.8;
 	}
 	.list-info {
