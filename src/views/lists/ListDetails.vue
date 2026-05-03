@@ -4,9 +4,6 @@
 
 		<!-- list information -->
 		<div class="list-info">
-			<div class="cover">
-				<img :src="list.coverUrl" alt="list cover image">
-			</div>
 			<div class="list-desc">
 				<h2>{{ list.title }}</h2>
 				<p class="username">Created by {{ list.userName }}</p>
@@ -47,7 +44,6 @@
 
 <script>
 import AddMovie from '@/components/AddMovie.vue'
-import useStorage from '@/composables/useStorage'
 import useDocument from '@/composables/useDocument'
 import getDocument from '@/composables/getDocument'
 import getUser from '@/composables/getUser'
@@ -62,7 +58,6 @@ export default {
 		const { error, document: list } = getDocument('lists', props.id)
 		const { user } = getUser()
 		const { deleteDoc, updateDoc } = useDocument('lists', props.id)
-		const { deleteImage } = useStorage()
 		const router = useRouter()
 
 		const modalOn = ref(false)
@@ -95,7 +90,6 @@ export default {
 		})
 
 		const handleDelete = async () => {
-			await deleteImage(list.value.filePath)
 			await deleteDoc()
 			router.push({ name: 'Home' })
 		}
@@ -189,7 +183,7 @@ export default {
 		align-items: center;
 	}
 	.list-desc {
-		margin-left: 30px;
+		margin-left: 0;
 	}
 	.movie-list {
 		width: 100%;
